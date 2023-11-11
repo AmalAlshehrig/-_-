@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>قيس غبائك</title>
+    <link rel="icon" href="غبائك.png">
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: rgb(255, 255, 255)
+        /* overflow: hidden; */
+      }
+
+      .cont {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 5px;
+        width: 70%;
+        height: 50vh;
+        color: black;
+      }
+
+      .cont h3 {
+        font-size: 3rem;
+      }
+
+      .cont button {
+        border: none;
+        padding: 10px 30px;
+        border-radius: 5px;
+        margin: 0px 10px;
+        background-color: #C66344;
+      }
+
+      .cont button:hover {
+        box-shadow: 0px 5px 20px #c6624482;
+      }
+      .lol{
+        width: 20;
+        height: 20;
+      }
+      #hent{
+        border: none;
+        padding: 10px 30px;
+        border-radius: 5px;
+        margin: 0px 10px;
+        background-color: #C66344;
+      }
+      @media(max-width: 767px) {
+        .cont button {
+        border: none;
+        padding: 10px 30px;
+        border-radius: 5px;
+        margin: 0px 10px;
+        background-color: #C66344;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 1rem;
+      }
+      .cont h3 {
+        font-size: 2rem;
+      }
+      #myVid{
+        width: 90%;
+        height: 90%;
+      }
+      #myVid1{
+        width: 90%;
+        height: 90%;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="logo.jpg"
+            height="40"
+          />
+        </a>
+      </div>
+    </nav>
+    <!-- end nav bar -->
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      "
+    >
+    <h1 class="lol"></h1>
+    <h1 class="lol"></h1>
+    <h1 class="lol"></h1>
+    <h1 class="lol"></h1>
+    <h1 class="lol"></h1>
+    <h1 class="lol"></h1>
+    <h1 class="lol"></h1>
+    <h1 class="lol"></h1>
+      <div class="cont" id="qustions-cont">
+        <h3 id="qustions-text"></h3>
+        <div id="options"></div>
+        <p>Timer: <span id="time-left">10</span>S</p>
+        <button id="hent">😉 و إن طلبناك</button>
+      </div>
+      <div class="cont" id="result-cont" style="display: none">
+        <video id="myVid" width="500" height="500" style="display: none">
+          <source src="60%.mp4" type="video/mp4">
+        </video>
+        <video id="myVid1" width="500" height="500" style="display: none">
+          <source src="0%.mp4" type="video/mp4">
+        </video>
+        <h3 id="result-text"></h3>
+      </div>
+    </div>
+  </body>
+  <script>
+      const questions = [
+    {
+      questionTitle: "يمتلك عين واحدة ولكن لا يمكنه الرؤية؟",
+      options: ["العدسة", "الكاميرا", "المسمار", "الابرة"],
+      keyAnswer: "الابرة",
+    },
+    {
+      questionTitle: "ما هو الشيء الذي يظل يتتبع الكلب أينما ذهب؟",
+      options: ["الرياح", "الصياد", "الظل", "الذيل"],
+      keyAnswer: "الذيل",
+    },
+    {
+      questionTitle: "أوجد حاسة الشم لدى الثعبان أين تتواجد؟",
+      options: ["لا شيئ مما سبق", "الذيل", "الرأس", "اللسان"],
+      keyAnswer: "اللسان",
+    },
+    {
+      questionTitle: "شيء يتوفر له الكثير من الأسنان ولكن لا يعض أحد ؟",
+      options: ["الفرشاة", "الصبار", "الشوكة", "المشط"],
+      keyAnswer: "المشط",
+    },
+    {
+        questionTitle: "شيء يرتفع دائمًا، ولكن لا ينخفض ​​أبدًا ؟",
+        options: ["الحيوان", "الانسان", "الجبل", "العمر"],
+        keyAnswer: "العمر",
+      },
+      {
+        questionTitle: "يمتلك الكثير من المفاتيح ولكن لا يمكنه فتح الباب ؟",
+        options: ["الاجابة الثانية", "عداد الكهرباء", "القيتار", "البيانو"],
+        keyAnswer: "البيانو",
+      },
+      {
+        questionTitle: "شيء يخصك ولكن يستخدمه الجميع أكثر منك ؟",
+        options: ["رقمك", "أكلك", "أسمك", "ملابسك"],
+        keyAnswer: "أسمك",
+      },
+      {
+        questionTitle: "ما الذي يزداد حدة كلما زاد استخدامه؟",
+        options: ["الملعقة","المسمار", "القعل", "السكين"],
+        keyAnswer: "السكين",
+      },
+      {
+        questionTitle: "شيء لا يمكن أن تراه أمامك فما هو؟",
+        options: ["المطر", "الماء", "الضوء", "المستقبل"],
+        keyAnswer: "المستقبل",
+      },
+      {
+        questionTitle: "من هيا أم الدنيا ؟",
+        options: ["الكويت", "القاهرة", "السودان", "مصر"],
+        keyAnswer: "مصر",
+      },
+  ];
+  const qustionsCont = document.getElementById("qustions-cont");
+  const qustionsText = document.getElementById("qustions-text");
+  const options = document.getElementById("options");
+  const timeLeft = document.getElementById("time-left");
+  const resultCont = document.getElementById("result-cont");
+  const resultText = document.getElementById("result-text");
+  let hent =document.getElementById("hent")
+  let videoexam=document.getElementById("myVid")
+  let videoexam1=document.getElementById("myVid1")
+  let currentIndex = 0;
+  let score = 10;
+  let timer = 10;
+  let countDown;
+  function showQuestion(index) {
+    const questin = questions[index];
+    qustionsText.innerText = questin.questionTitle;
+    options.innerHTML = "";
+    questin.options.forEach((option) => {
+      const b = document.createElement("button");
+      b.textContent = option;
+      options.appendChild(b);
+      b.addEventListener("click", () => {
+        checkAnswer(option, questin.keyAnswer);
+      });
+    });
+  }
+  function showTimer() {
+    countDown = setInterval(function () {
+      timer--;
+      timeLeft.textContent = timer;
+      if (timer <= 0) {
+        clearInterval(countDown);
+        checkAnswer("", null);
+      }
+    }, 1000);
+  }
+  showQuestion(currentIndex);
+  showTimer();
+  function checkAnswer(myAnswer, correctAnswer) {
+    currentIndex++;
+    clearInterval(countDown);
+    if (myAnswer === correctAnswer) {
+      score--;
+    }
+    if (currentIndex < questions.length) {
+      showQuestion(currentIndex);
+      timer = 10;
+      timeLeft.textContent = timer;
+      showTimer();
+    } else {
+      showResult();
+    }
+  }
+  function showResult() {
+    qustionsCont.style.display = "none";
+    resultCont.style.display = "flex";
+    if((score*100/10)>60){
+      videoexam.style.display = "flex";
+      videoexam.play();
+    }else{
+      videoexam1.style.display = "flex";
+      videoexam1.play();
+    }
+    resultText.textContent = `${score*100/10}%`;
+  }
+  hent.addEventListener("click",function hentt(){
+     alert(" 😅 أستخدم طريقة حقره بقرة و خليها على ربك ");
+  })
+
+  </script>
+</html>

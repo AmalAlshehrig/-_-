@@ -1,4 +1,4 @@
-const questions = [
+  const questions = [
     {
       questionTitle: "ما هو شكل الأرض؟",
       options: ["مثلثة", "مربعة", "كروية", "مسطحة"],
