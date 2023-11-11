@@ -63,6 +63,31 @@
         margin: 0px 10px;
         background-color: #C66344;
       }
+      @media(max-width: 767px) {
+        .cont button {
+        border: none;
+        padding: 10px 30px;
+        border-radius: 5px;
+        margin: 0px 10px;
+        background-color: #C66344;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 1rem;
+      }
+      .cont h3 {
+        font-size: 2rem;
+      }
+      #myVid{
+        width: 90%;
+        height: 90%;
+      }
+      #myVid1{
+        width: 90%;
+        height: 90%;
+      }
+      }
     </style>
   </head>
   <body>
@@ -101,14 +126,6 @@
         <button id="hent">😉 و إن طلبناك</button>
       </div>
       <div class="cont" id="result-cont" style="display: none">
-        <h1 class="lol"></h1>
-        <h1 class="lol"></h1>
-        <h1 class="lol"></h1>
-        <h1 class="lol"></h1>
-        <h1 class="lol"></h1>
-        <h1 class="lol"></h1>
-        <h1 class="lol"></h1>
-        <h1 class="lol"></h1>
         <video id="myVid" width="500" height="500" style="display: none">
           <source src="60%.mp4" type="video/mp4">
         </video>

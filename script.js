@@ -60,7 +60,7 @@ const questions = [
   let videoexam=document.getElementById("myVid")
   let videoexam1=document.getElementById("myVid1")
   let currentIndex = 0;
-  let score = 0;
+  let score = 10;
   let timer = 10;
   let countDown;
   function showQuestion(index) {
@@ -92,7 +92,7 @@ const questions = [
     currentIndex++;
     clearInterval(countDown);
     if (myAnswer === correctAnswer) {
-      score++;
+      score--;
     }
     if (currentIndex < questions.length) {
       showQuestion(currentIndex);
@@ -106,7 +106,7 @@ const questions = [
   function showResult() {
     qustionsCont.style.display = "none";
     resultCont.style.display = "flex";
-    if((score*100/10)<60){
+    if((score*100/10)>60){
       videoexam.style.display = "flex";
       videoexam.play();
     }else{
