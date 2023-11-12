@@ -113,7 +113,7 @@
       videoexam1.style.display = "flex";
       videoexam1.play();
     }
-    resultText.textContent = `${score*100/10}%`;
+    resultText.textContent = `${score*100/10}%نسبة الغباء  `;
   }
   hent.addEventListener("click",function hentt(){
      alert(" 😅 أستخدم طريقة حقره بقرة و خليها على ربك ");
